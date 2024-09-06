@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('flights', function (Blueprint $table) {
-            $table->id();
+            $table->id('flight_id');
+            $table->string('airline');
+            $table->string('origin');
+            $table->string('destination');
+            $table->datetime('departure_date');
+            $table->datetime('arrival_date');
+            $table->integer('capacity');
+            $table->float('price');
             $table->timestamps();
         });
     }
