@@ -12,54 +12,96 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings = Booking::where('user_id', Auth::id())->get();
+        return response()->json($bookings);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function allData()
     {
-        //
+        $bookings = Booking::with(['user', 'flight'])->get();
+        return response()->json($bookings);
+    }
+    public function allDataUser($userId)
+    {
+        $bookings = Booking::with(['user', 'flight'])
+            ->where('user_id', $userId)
+            ->get();
+        return response()->json($bookings);
+    }
+    public function show($booking_id)
+    {
+        $booking = Booking::where('user_id', Auth::id())->findOrFail($booking_id);
+        return response()->json($booking);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'flight_id' => 'required|exists:flights,flight_id',
+            'status' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
+        $flight = Flight::findOrFail($request->flight_id);
+
+        if ($flight->capacity < 1) {
+            return response()->json(['message' => 'Not enough seats available.'], 400);
+        }
+
+        $booking = Booking::create([
+            'user_id' => Auth::id(),
+            'flight_id' => $request->flight_id,
+            'booking_date' => now(),
+            'status' => $request->status,
+        ]);
+
+        $flight->decrement('capacity', 1);
+
+        return response()->json($booking, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Booking $booking)
+    public function update(Request $request, $booking_id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
+        $booking = Booking::where('user_id', Auth::id())->findOrFail($booking_id);
+        $booking->update([
+            'status' => $request->status,
+        ]);
+
+        return response()->json($booking, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Booking $booking)
+    public function destroy($booking_id)
     {
-        //
+        $booking = Booking::findOrFail($booking_id);
+
+        $flight = $booking->flight;
+        $flight->increment('capacity', 1);
+
+        $booking->delete();
+
+        return response()->json(null, 204);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Booking $booking)
+    public function __construct()
     {
-        //
+        $this->middleware('auth:sanctum');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Booking $booking)
+    public function checkBooking($id)
     {
-        //
+        $exists = Booking::where('booking_id', $id)->exists();
+
+        return response()->json(['exists' => $exists]);
     }
 }

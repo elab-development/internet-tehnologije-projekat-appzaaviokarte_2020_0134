@@ -18,6 +18,10 @@ return new class extends Migration
             $table->date('booking_date');
             $table->string('status');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+
+            $table->foreign('flight_id')->references('flight_id')->on('flights')->onDelete('cascade');
         });
     }
 
