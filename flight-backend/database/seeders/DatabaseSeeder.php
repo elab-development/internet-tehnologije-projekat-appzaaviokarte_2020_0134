@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Flight;
+use App\Models\Booking;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,12 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         //User::factory(10)->create();
+         User::factory(10)->create();
+         Flight::factory(10)->create();
+         Booking::factory(10)->create();
+         
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
         // Flight::create([
         //     'flight_id' => '1111',
