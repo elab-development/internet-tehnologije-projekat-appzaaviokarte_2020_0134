@@ -21,10 +21,11 @@ class DatabaseSeeder extends Seeder
          Booking::factory(10)->create();
          
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => 'pavle123456',
+        ]);
 
         // Flight::create([
         //     'flight_id' => '1111',

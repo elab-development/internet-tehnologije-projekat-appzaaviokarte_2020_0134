@@ -50,21 +50,8 @@ Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
 });
 
 
-
-// Route::get('/airports', [AirportController::class, 'index']); // Ova ruta treba da bude javna
-// Route::get('/airports/{airport_id}', [AirportController::class, 'show']);
-// Route::middleware(['auth:sanctum'])->group(function () {
-//     // Route::get('/airports', [AirportController::class, 'index']);
-//     // Route::get('/airports/{airport_id}', [AirportController::class, 'show']);
-//     Route::post('/airports', [AirportController::class, 'store']);
-//     Route::put('/airports/{airport_id}', [AirportController::class, 'update']);
-//     Route::delete('/airports/{airport_id}', [AirportController::class, 'destroy']);
-//     Route::get('airports/check-name/{name}', [AirportController::class, 'checkName']);
-// });
-
-
 //proveri
-Route::get('/users', [UserController::class, 'index']);
+// Route::get('/users', [UserController::class, 'index']);
 Route::get('users/check-name/{name}', [UserController::class, 'checkName']);
 Route::get('users/check-email/{email}', [UserController::class, 'checkEmail']);
 
