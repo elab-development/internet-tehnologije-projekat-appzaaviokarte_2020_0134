@@ -16,15 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory(10)->create();
-         Flight::factory(10)->create();
-         Booking::factory(10)->create();
-         
+        User::factory(10)->create();
+        Flight::factory(10)->create();
+        Booking::factory(10)->create();
+
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => 'pavle123456',
+            'username' => 'pavle',
+            'email' => 'pavle@example.com',
+            'password' => 'pavle123',
         ]);
 
         // Flight::create([

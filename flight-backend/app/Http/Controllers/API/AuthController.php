@@ -35,7 +35,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|string',
@@ -46,7 +46,7 @@ class AuthController extends Controller
         }
 
         $user = User::create([
-            'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
@@ -66,7 +66,7 @@ class AuthController extends Controller
         $user = User::where('email', $request['email'])->firstOrFail();
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json([
-            'message' => 'Hi ' . $user->name . ', welcome to home',
+            'message' => 'Hi ' . $user->username . ', welcome to home',
             'access_token' => $token,
             'token_type' => 'Bearer',
             'user' => $user

@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $users = User::all();
@@ -28,7 +25,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|string',
@@ -39,7 +36,7 @@ class UserController extends Controller
         }
 
         $user = User::create([
-            'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
@@ -53,7 +50,7 @@ class UserController extends Controller
         $user = User::findOrFail($user_id);
 
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|string|max:255|unique:users,name,' . $user->user_id . ',user_id',
+            'username' => 'sometimes|string|max:255|unique:users,username,' . $user->user_id . ',user_id',
             'email' => 'sometimes|string|email|max:255|unique:users,email,' . $user->user_id . ',user_id',
             'password' => 'sometimes|string|min:8|confirmed',
             'role' => 'sometimes|string',
@@ -63,8 +60,8 @@ class UserController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        if ($request->has('name')) {
-            $user->name = $request->name;
+        if ($request->has('username')) {
+            $user->username = $request->username;
         }
         if ($request->has('email')) {
             $user->email = $request->email;
@@ -88,9 +85,9 @@ class UserController extends Controller
 
         return response()->json(null, 204);
     }
-    public function checkName($name)
+    public function checkUsername($username)
     {
-        $exists = User::where('name', $name)->exists();
+        $exists = User::where('username', $username)->exists();
         return response()->json(['exists' => $exists]);
     }
     public function checkEmail($email)

@@ -57,8 +57,8 @@ Route::middleware(['auth:sanctum', 'check_admin'])->group(function () {
 });
 
 //proveri
-Route::get('/users', [UserController::class, 'index']);
-Route::get('users/check-name/{name}', [UserController::class, 'checkName']);
+//Route::get('/users', [UserController::class, 'index']);
+Route::get('users/check-username/{username}', [UserController::class, 'checkUsername']);
 Route::get('users/check-email/{email}', [UserController::class, 'checkEmail']);
 
 Route::post('/register', [AuthController::class, 'register']);
