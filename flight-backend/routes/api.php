@@ -41,23 +41,23 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/flights/{flight_id}/capacity', [FlightController::class, 'updateCapacity']);
 });
 
-// Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
-//     Route::get('/users', [UserController::class, 'index']);
-//     Route::get('/users/{user_id}', [UserController::class, 'show']);
-//     Route::post('/users', [UserController::class, 'store']);
-//     Route::put('/users/{user_id}', [UserController::class, 'update']);
-//     Route::delete('/users/{user_id}', [UserController::class, 'destroy']);
-// });
-Route::middleware(['auth:sanctum', 'check_admin'])->group(function () {
+Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/{user_id}', [UserController::class, 'show']);
     Route::post('/users', [UserController::class, 'store']);
     Route::put('/users/{user_id}', [UserController::class, 'update']);
     Route::delete('/users/{user_id}', [UserController::class, 'destroy']);
 });
+// Route::middleware(['auth:sanctum', 'check_admin'])->group(function () {
+//     Route::get('/users', [UserController::class, 'index']);
+//     Route::get('/users/{user_id}', [UserController::class, 'show']);
+//     Route::post('/users', [UserController::class, 'store']);
+//     Route::put('/users/{user_id}', [UserController::class, 'update']);
+//     Route::delete('/users/{user_id}', [UserController::class, 'destroy']);
+// });
 
 //proveri
-//Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index']);
 Route::get('users/check-username/{username}', [UserController::class, 'checkUsername']);
 Route::get('users/check-email/{email}', [UserController::class, 'checkEmail']);
 
