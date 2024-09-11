@@ -41,7 +41,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/flights/{flight_id}/capacity', [FlightController::class, 'updateCapacity']);
 });
 
-Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/{user_id}', [UserController::class, 'show']);
     Route::post('/users', [UserController::class, 'store']);
