@@ -9,12 +9,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\AirportController;
 
 
 Route::apiResource('users', UserController::class);
 //Route::apiResource('admins', AdminController::class);
 Route::apiResource('flights', FlightController::class);
-// Route::apiResource('airports', AirportController::class);
+Route::apiResource('airports', AirportController::class);
 Route::apiResource('bookings', BookingController::class);
 
 
@@ -48,6 +49,19 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/users/{user_id}', [UserController::class, 'update']);
     Route::delete('/users/{user_id}', [UserController::class, 'destroy']);
 });
+
+
+Route::get('/airports', [AirportController::class, 'index']); // Ova ruta treba da bude javna
+Route::get('/airports/{airport_id}', [AirportController::class, 'show']);
+Route::middleware(['auth:sanctum'])->group(function () {
+    // Route::get('/airports', [AirportController::class, 'index']);
+    // Route::get('/airports/{airport_id}', [AirportController::class, 'show']);
+    Route::post('/airports', [AirportController::class, 'store']);
+    Route::put('/airports/{airport_id}', [AirportController::class, 'update']);
+    Route::delete('/airports/{airport_id}', [AirportController::class, 'destroy']);
+    Route::get('airports/check-name/{name}', [AirportController::class, 'checkName']);
+});
+
 // Route::middleware(['auth:sanctum', 'check_admin'])->group(function () {
 //     Route::get('/users', [UserController::class, 'index']);
 //     Route::get('/users/{user_id}', [UserController::class, 'show']);
