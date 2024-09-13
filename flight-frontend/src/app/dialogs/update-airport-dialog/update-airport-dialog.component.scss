@@ -1,3 +1,69 @@
 .full-width {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.dialog {
+  background-color: #ecb74c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog h1 {
+  font-size: 24px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.dialog mat-dialog-content {
+  padding: 15px 0;
+}
+
+.dialog mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+// .dialog mat-form-field input {
+//   background-color: #ffffff; /* Svetlosiva pozadina input polja */
+//   border-radius: 4px;
+//   padding: 10px;
+// }
+
+.dialog mat-error {
+  color: #ff0400; /* Crvena boja za greške */
+  font-size: 12px;
+}
+
+.dialog mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.dialog mat-dialog-actions button {
+  color: black; /* Crna boja za tekst dugmadi */
+  background-color: #2980b9; /* Plava boja za dugmad */
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dialog mat-form-field {
+  background-color: #f2d293; /* Tamna pozadina za input polja */
+  border-radius: 5px;
+}
+
+.dialog mat-dialog-actions button:hover {
+  background-color: #3498db; /* Svetlija nijansa plave pri hover efektu */
+}
+
+.dialog mat-dialog-actions button:first-child {
+  background-color: #95a5a6; /* Svetlosiva boja za Cancel dugme */
+}
+
+.dialog mat-dialog-actions button:first-child:hover {
+  background-color: #bdc3c7; /* Svetlija siva pri hover efektu */
+}

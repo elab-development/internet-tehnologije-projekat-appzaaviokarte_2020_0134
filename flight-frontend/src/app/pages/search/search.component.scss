@@ -1,62 +1,162 @@
 :host {
   display: block;
-  background-color: #ecf0f1;
-  min-height: 100vh; 
- } 
+  background-color: #373633;
+  min-height: 100vh;
+}
+
+:root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
 #bodyContainer {
-  // background-color: #ecf0f1;
   padding: 15px;
 }
-.enter-form{
+
+.section__title-1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section__description {
+  font-size: 2rem; // Larger font size
+  font-weight: 700; // Bold
+  color: #f2d293; // Darker color for better contrast
+  margin-bottom: 10px;
+}
+
+.section__header {
+  font-size: 1.25rem; // Slightly smaller than description
+  font-weight: 400; // Normal weight
+  color: #f2d293; // Lighter color for a modern look
+  line-height: 1.5; // Improved readability
+}
+
+.enter-form {
   width: 30%;
 }
 
 .form-container {
-  background-color: #2c3e50;
+  background-color: #f2d293;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   .field {
     margin-bottom: 15px;
   }
+
   .searchFormField {
-    width: 100%; 
-    height: 3rem; 
-    border-radius: 8px; 
-    font-size: 0.9rem; 
+    width: 100%;
+    height: 3rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
     font-weight: bold;
-    background-color: #ecf0f1; 
+    background-color: #ecf0f1;
     color: black;
   }
 
-    .button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      // background-color: #2c3e50;
-      // color: #ecf0f1;
+  .button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ecb74c;
+
+    &:hover {
+      background-color: #ecb74c;
     }
   }
-
-
-  .container-text {
-    text-align: center;
-    color: rgba(44, 62, 80, 0.85); 
-    font-size: larger;
 }
+
+.container-text {
+  text-align: center;
+  color: rgba(44, 62, 80, 0.85);
+  font-size: larger;
+}
+
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
+///////////////////////////////////////////
+//Features
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 0 12rem;
+}
 
+.features__feature {
+  align-self: center;
+  justify-self: center;
+  width: 70%;
+  font-size: 1.5rem;
+}
+
+.features__header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+//Footer
+.footer {
+  padding: 10rem 3rem;
+  background-color: #f2d293;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer__item {
+  margin-right: 4rem;
+}
+
+.footer__link {
+  font-size: 1.6rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.footer__copyright .footer__link {
+  font-size: 1.4rem;
+}
+
+/////////////////////////////////////////
 /// After search
 #FlightResult .box {
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #2c3e50;
+  background-color: #f2d293;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -72,11 +172,15 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    color: #ecf0f1;
+    color: #000000;
   }
 
   .button {
     width: 100%;
+    background-color: #ecb74c;
+
+    &:hover {
+      background-color: #ecb74c;
+    }
   }
 }
-

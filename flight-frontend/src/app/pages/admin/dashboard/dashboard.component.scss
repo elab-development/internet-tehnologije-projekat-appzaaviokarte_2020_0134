@@ -1,4 +1,3 @@
-/* dashboard.component.scss */
 :host {
   display: flex;
   height: 100vh;
@@ -16,12 +15,16 @@
 }
 
 .container {
-  background-color: #ecf0f1; /* Light gray */
-  color: #2c3e50; /* Dark blue-gray */
+  background-color: #373633; /* Light gray */
+  color: #ffffff; /* Dark blue-gray */
   padding: 20px;
   flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Postavlja sadržaj uz desnu ivicu */
+  align-items: flex-start; /* Drži sadržaj uz gornju ivicu */
 }
 
-.title, .subtitle {
-  color: #2c3e50; /* Dark blue-gray */
+.title,
+.subtitle {
+  color: #ffffff; /* Dark blue-gray */
 }

@@ -1,7 +1,55 @@
 .full-width {
-    width: 100%;
-  }
-.dialog{
-    background-color: #ecf0f1; /* Light gray */
+  width: 100%;
 }
-  
+.dialog {
+  background-color: #ecb74c; /* Tamna pozadina za ceo dijalog */
+  color: #ecf0f1; /* Svetla boja teksta */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dialog h1 {
+  color: #000000; /* Svetlija boja naslova */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dialog mat-form-field {
+  background-color: #f2d293; /* Tamna pozadina za input polja */
+  border-radius: 5px;
+}
+
+.dialog input {
+  color: #000000; /* Svetla boja teksta unutar input polja */
+}
+
+.dialog mat-label {
+  color: #000000; /* Svetlija boja za label element */
+}
+
+.dialog mat-error {
+  color: #ff0000; /* Crvena boja za greške */
+}
+
+.dialog mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.dialog mat-dialog-actions button {
+  color: black; /* Crna boja za tekst dugmadi */
+  background-color: #000000; /* Plava boja za dugmad */
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dialog mat-dialog-actions button:hover {
+  background-color: #717578; /* Svetlija nijansa plave pri hover efektu */
+}
+
+.mat-button {
+  color: #000000;
+}
