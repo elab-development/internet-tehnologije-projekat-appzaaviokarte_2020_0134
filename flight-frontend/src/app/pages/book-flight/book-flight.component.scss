@@ -1,0 +1,71 @@
+:host {
+  display: block;
+  background-color: #373633;
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 50px;
+  background-color: #ecb74c;
+  border-radius: 8px;
+}
+
+#FlightResult {
+  background-color: #ecb74c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 12px 8px 10px rgba(0, 0, 0, 0.1);
+}
+.title123 {
+  color: #000000;
+}
+.columns {
+  margin: 0;
+  color: #000000;
+}
+
+.column {
+  padding: 10px;
+}
+
+.column strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.column span,
+.column small {
+  display: block;
+  font-size: 1rem;
+  color: #000000;
+}
+
+button.button {
+  width: 100%;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+.button.is-danger {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #000000;
+  &:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+  }
+}
+
+button.is-danger:hover {
+  background-color: #ff2b56;
+  border-color: #ff2b56;
+  color: #000000;
+}
+
+.has-text-centered {
+  display: flex;
+  justify-content: center; // Centriranje horizontalno
+  align-items: center; // Centriranje vertikalno
+}

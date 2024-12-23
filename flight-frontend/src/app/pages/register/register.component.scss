@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2d293;
+  color: #ecf0f1;
+}
+.example-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f1b949;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  button {
+    width: 100%;
+    background-color: #f2d293; /* Svetlije plavo */
+    color: #000000;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e2b457; /* Tamnije plavo na hover */
+    }
+  }
+
+  a {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
