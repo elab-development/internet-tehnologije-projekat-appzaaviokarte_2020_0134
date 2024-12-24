@@ -1,29 +1,37 @@
 <mat-toolbar *ngIf="showNavbar" class="full_navbar">
-  <span class="title">Flight Finder</span>
-  <span class="spacer"></span>
-  <button
-    mat-button
-    routerLink="/search"
-    style="color: #000000"
-    [disabled]="disableButtons"
-  >
-    Home
-  </button>
-  <button
-    mat-button
-    routerLink="/my-bookings"
-    style="color: #000000"
-    [disabled]="disableButtons"
-  >
-    My bookings
-  </button>
-  <button
-    mat-button
-    style="color: #000000"
-    [disabled]="disableButtons"
-    (click)="logout()"
-  >
-    Logout
-  </button>
+  <span class="title">Flightly</span>
+  <span></span>
+  <ul class="nav__buttons">
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/search"
+        [disabled]="disableButtons"
+      >
+        Home
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/my-bookings"
+        [disabled]="disableButtons"
+      >
+        Bookings
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        [disabled]="disableButtons"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </li>
+  </ul>
 </mat-toolbar>
 <router-outlet></router-outlet>

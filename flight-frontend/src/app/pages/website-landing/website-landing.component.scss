@@ -1,12 +1,35 @@
-.spacer {
-  flex: 1 1 auto;
-}
 .full_navbar {
-  background-color: #f2d293;
+  background-color: #535151;
   color: #000000;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+  padding: 0 6rem;
+  z-index: 100;
+  margin-top: 1px;
 
-.title {
-  color: #000000;
-  margin-top: 25px;
+  .nav__buttons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  .title {
+    color: #d6d8e4;
+    height: 2vh;
+  }
+  .nav__item {
+    margin-left: 4rem;
+    padding: 10px;
+  }
+  .button {
+    font-size: 19px;
+    padding: 15px 20px;
+    color: #d6d8e4;
+  }
+  .nav__buttons {
+    display: flex;
+    gap: 10px;
+  }
 }
