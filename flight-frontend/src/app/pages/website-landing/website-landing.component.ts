@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class WebsiteLandingComponent {
   showNavbar: boolean = true;
   disableButtons: boolean = false;
+  user: any;
   constructor(private router: Router, private authService: AuthService) {
     this.router.events.subscribe(() => {
       this.updateNavbarVisibility();
@@ -21,6 +22,7 @@ export class WebsiteLandingComponent {
         this.updateButtonState(event.url);
       }
     });
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   updateButtonState(url: string): void {
