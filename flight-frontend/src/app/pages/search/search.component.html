@@ -1,7 +1,7 @@
 <div class="page">
   <section class="section" id="bodyContainer">
     <div class="section__title-1">
-      <h2 class="section__description">Choose a flight</h2>
+      <h2 class="section__description">Discover flights</h2>
       <h3 class="section__header">
         Everything you need to schedule your dream vacation.
       </h3>
@@ -15,7 +15,7 @@
               class="searchFormField"
               [(ngModel)]="fromAirport"
             >
-              Select Airport
+              <option value="" disabled selected>Select Airport</option>
               <option *ngFor="let airport of airports" [ngValue]="airport">
                 {{ airport.name }}, {{ airport.city }}, {{ airport.country }}
               </option>
@@ -28,6 +28,7 @@
               class="searchFormField"
               [(ngModel)]="toAirport"
             >
+              <option value="" disabled selected>Select Airport</option>
               <option *ngFor="let airport of airports" [ngValue]="airport">
                 {{ airport.name }}, {{ airport.city }}, {{ airport.country }}
               </option>
@@ -55,7 +56,7 @@
                 type="button "
                 (click)="searchFlights()"
               >
-                Search
+                Search flights
               </button>
             </div>
           </div>
@@ -68,7 +69,7 @@
         </div>
 
         <div *ngIf="!isLoading && flights.length === 0" class="container-text">
-          Nema letova za izabrane filtere.
+          No flights for applied filters.
         </div>
 
         <div id="FlightResult" *ngIf="!isLoading && flights.length > 0">
@@ -111,72 +112,4 @@
       </div>
     </div>
   </section>
-
-  <section class="section" id="section--1">
-    <div class="section__title">
-      <h2 class="section__description">User experiences</h2>
-    </div>
-
-    <div class="features">
-      <div class="features__feature">
-        <h5 class="features__header">Pavle Dimitrijevic</h5>
-        <p>
-          "The flight booking app made my travel experience seamless, with a
-          straightforward search feature and clear flight options. Booking took
-          just a few minutes, and I received immediate confirmation.
-        </p>
-      </div>
-      <div class="features__feature">
-        <h5 class="features__header">Djordje Pavlovic</h5>
-        <p>
-          "This app is a game-changer for booking flights! It saved me so much
-          time by showing all the best deals in one place. I appreciated the
-          smooth payment process and the instant confirmation of my tickets."
-        </p>
-      </div>
-      <div class="features__feature">
-        <h5 class="features__header">Sofija Damnjanovic</h5>
-        <p>
-          "Booking flights has never been easier thanks to this app's simple
-          design and fast-loading pages. It allowed me to view multiple airlines
-          and their prices side by side. I also enjoyed the added feature of
-          in-app customer support for any questions I had."
-        </p>
-      </div>
-      <div class="features__feature">
-        <h5 class="features__header">Jovana Jankovic</h5>
-        <p>
-          "I loved how quickly I was able to find and book flights through the
-          app. The filter options helped me customize my search based on budget
-          and flight duration. The app also provided live updates on any flight
-          changes, which kept me informed throughout my journey."
-        </p>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <ul class="footer__nav">
-      <li class="footer__item">
-        <a class="footer__link" href="#">About</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Pricing</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Terms of Use</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Privacy Policy</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Careers</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Blog</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="#">Contact Us</a>
-      </li>
-    </ul>
-  </footer>
 </div>
