@@ -1,13 +1,22 @@
 <div class="page">
   <section class="section" id="bodyContainer">
     <div class="section__title-1">
-      <h2 class="section__description">Discover flights</h2>
-      <h3 class="section__header">Easy</h3>
+      <h2 class="section__description">
+        Discover flights <i class="fa-solid fa-plane-departure"></i>
+      </h2>
+      <h3 class="section__header">
+        with <i class="fa-solid fa-at"></i>Flightly
+      </h3>
     </div>
     <div class="columns">
       <aside class="column is-one-quarter enter-form">
         <form name="searchFlight" class="box form-container">
+          <h2 class="desc">Find destinations:</h2>
+
           <div class="sourceDestination mb-3">
+            <h4 class="fromTitle">
+              From <i class="fa-solid fa-location-dot"></i>
+            </h4>
             <select
               name="fromAirport"
               class="searchFormField"
@@ -21,6 +30,9 @@
           </div>
 
           <div class="sourceDestination mb-3">
+            <h4 class="toTitle">
+              To <i class="fa-solid fa-location-arrow"></i>
+            </h4>
             <select
               name="toAirport"
               class="searchFormField"
@@ -34,6 +46,9 @@
           </div>
 
           <div class="field searchFormField">
+            <h4 class="fromTitle">
+              Select date <i class="fa-regular fa-calendar"></i>
+            </h4>
             <div class="control">
               <input
                 class="input searchFormField"
@@ -72,12 +87,15 @@
 
         <div id="FlightResult" *ngIf="!isLoading && flights.length > 0">
           <div class="box">
+            <h2 class="desc">
+              Available flights <i class="fa-regular fa-circle-check"></i>
+            </h2>
             <div class="row header">
               <div class="cell">Airline</div>
               <div class="cell">Departure</div>
               <div class="cell">Arrival</div>
-              <div class="cell">Tickets Left</div>
               <div class="cell">Price</div>
+              <div class="cell"></div>
               <div class="cell"></div>
             </div>
           </div>
@@ -93,7 +111,6 @@
                 </div>
                 <div class="cell">{{ flight.departure_date }}</div>
                 <div class="cell">{{ flight.arrival_date }}</div>
-                <div class="cell">{{ flight.capacity }}</div>
                 <div class="cell">{{ flight.price | currency }}</div>
                 <div class="cell">
                   <button

@@ -1,33 +1,42 @@
 .page {
-  font-family: "Roboto", sans-serif;
+  font-family: "Varela Round", serif;
   background-color: #d6d8e4;
 
   .section {
     background-color: #d6d8e4;
-    padding: 50px 0;
+    padding: 40px 0;
   }
 
   .section__title-1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .desc {
+    font-size: 25px;
+    margin-left: 10px;
+    font-family: "Varela Round", serif;
   }
 
   .section__description {
     font-size: 45px;
     font-weight: bold;
+    font-family: "Varela Round", serif;
     color: #4a4a4a;
     margin-bottom: 2px;
   }
 
   .section__header {
-    font-size: 18px;
+    font-size: 14px;
+    font-family: "Varela Round", serif;
     color: #777;
   }
 
   .columns {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 0px 80px;
   }
 
   .enter-form {
@@ -100,6 +109,13 @@
     border-radius: 10px;
   }
 
+  .fromTitle {
+    font-size: 15px;
+  }
+  .toTitle {
+    font-size: 15px;
+  }
+
   .loading {
     margin-top: 50px;
     margin-right: 50px;
@@ -109,7 +125,7 @@
     margin-top: 30px;
 
     .box {
-      background-color: #333;
+      background-color: #252525;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);

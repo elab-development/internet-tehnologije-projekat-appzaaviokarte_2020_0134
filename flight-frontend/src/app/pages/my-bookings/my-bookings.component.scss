@@ -1,36 +1,35 @@
 :host {
   display: block;
-  background-color: #373633;
+  background-color: #bbc0d9;
   min-height: 100vh;
+  font-family: "Varela Round", serif;
 }
 
 .no-bookings {
-  font-family: "Arial", sans-serif;
+  font-family: "Varela Round", serif;
   font-size: 1.5rem;
-  color: rgba(255, 0, 0, 0.8);
+  color: #323030;
   text-align: center;
   margin-top: 100px;
 }
 
 .container {
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Omogućava prelazak u sledeći red ako nema dovoljno prostora */
+  gap: 20px; /* Razmak između elemenata */
+  justify-content: center; /* Centriranje elemenata horizontalno */
 }
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.title {
-  text-align: left;
-  color: #ffffff;
-  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .search-bar {
-  background-color: #f2d293;
+  background-color: #323030;
   color: #000000;
   padding: 15px;
   font-size: 1rem;
@@ -41,20 +40,20 @@
 }
 
 .search-bar:focus {
-  border-color: #f2d293;
+  border-color: #9faae1;
 }
 
 .booking-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ecb74c;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  font-family: "Varela Round", serif;
+  border-radius: 30px;
+  background: linear-gradient(-150deg, #585757, #141414);
+
+  margin-bottom: 50px;
+
+  flex: 1 1 calc(25% - 20px); /* Širina svake kartice (prilagođava se prostoru) */
+  max-width: calc(25% - 50px); /* Maksimalna širina */
+  box-sizing: border-box; /* Uključuje padding i border u ukupnu širinu */
 }
 
 .booking-content {
@@ -63,41 +62,56 @@
 
 .booking-info {
   flex: 1;
+  margin-bottom: 30px;
 }
 
 .booking-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  width: 80%;
+  margin-left: 30px;
+  margin-right: 30px;
+  align-self: center;
 }
 
 .booking-title {
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  gap: 10px;
   font-weight: bold;
-  color: #000000;
+  color: rgb(215, 211, 211);
   margin-bottom: 15px;
 }
 
 .booking-detail {
-  font-size: 1rem;
-  color: #000000;
+  font-size: 0.7rem;
+  color: rgb(192, 185, 185);
   margin-bottom: 8px;
 }
 
 .flight-icon {
   margin: 0 10px;
   font-size: 1rem;
-  color: #000000;
+  color: rgb(192, 185, 185);
 }
 
 .arrow-icon {
-  margin: 0 10px;
-  color: #000000;
+  font-size: 1rem;
+  color: rgb(215, 211, 211);
+  margin-left: 15px;
 }
 
 .btn {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px 25px;
   border-radius: 40px;
+  height: 35px;
   cursor: pointer;
   font-size: 1.1rem;
   color: #000000;
@@ -106,7 +120,7 @@
 }
 
 .btn-confirm {
-  background-color: #2ecc71;
+  background-color: #4cc880;
 }
 
 .btn-confirm:hover {
@@ -115,7 +129,8 @@
 }
 
 .btn-delete {
-  background-color: #e74c3c;
+  background-color: #7aaad9;
+  margin-bottom: 10px;
 }
 
 .btn-delete:hover {
@@ -124,6 +139,7 @@
 }
 
 .booking-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-20px);
+  transition: transform 0.5s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }

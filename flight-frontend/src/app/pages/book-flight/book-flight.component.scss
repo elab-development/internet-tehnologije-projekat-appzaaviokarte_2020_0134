@@ -2,19 +2,25 @@
   display: block;
   background-color: #373633;
   min-height: 100vh;
+  font-family: "Varela Round", serif;
 }
 
 .container {
-  padding-top: 50px;
-  background-color: #ecb74c;
-  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Omogućava prelazak u sledeći red ako nema dovoljno prostora */
+  gap: 20px; /* Razmak između elemenata */
+  justify-content: center; /* Centriranje elemenata horizontalno */
 }
 
 #FlightResult {
-  background-color: #ecb74c;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 12px 8px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Varela Round", serif;
+  border-radius: 30px;
+  background: linear-gradient(125deg, #8998e1, #d2d7f3);
+  box-shadow: 10px 10px 20px #000000, -10px -10px 20px #000000;
+  margin-top: 80px;
+  margin-bottom: 50px;
 }
 .title123 {
   color: #000000;
