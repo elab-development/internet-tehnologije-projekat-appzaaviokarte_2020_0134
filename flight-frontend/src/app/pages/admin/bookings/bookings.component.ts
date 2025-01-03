@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BookingService } from '../../../services/booking.service';
 import { UserService } from '../../../services/user.service';
-import {MatTableDataSource} from "@angular/material/table";
-import {Airport} from "../../../models/airport";
-import {MatPaginator} from "@angular/material/paginator";
+import { MatTableDataSource } from '@angular/material/table';
+import { Airport } from '../../../models/airport';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-bookings',
@@ -14,17 +14,9 @@ export class BookingsComponent implements OnInit {
   bookings: any[] = [];
   filteredBookings: any[] = [];
   searchTerm: string = '';
-  displayedColumns: string[] = [
-    'username',
-    'flight_id',
-    'booking_date',
-    'origin',
-    'destination',
-    'departure_date',
-    'arrival_date',
-    'actions',
-  ];
-  dataSource = new MatTableDataSource<any>();
+  currentPage: number = 0;
+  pageSize: number = 4;
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private bookingService: BookingService) {}
@@ -35,11 +27,9 @@ export class BookingsComponent implements OnInit {
 
   loadBookings(): void {
     this.bookingService.getAllBookingsData().subscribe((data: any[]) => {
-      console.log(data);
       this.bookings = data;
       this.filteredBookings = data;
-      this.dataSource.data = data;
-      this.dataSource.paginator = this.paginator;
+      this.updatePage();
     });
   }
 
@@ -58,8 +48,19 @@ export class BookingsComponent implements OnInit {
           .includes(this.searchTerm.toLowerCase()) ||
         booking.status.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-    this.dataSource.data = this.filteredBookings;
-    this.dataSource.paginator = this.paginator;
+    this.updatePage();
+  }
+
+  onPaginate(event: any): void {
+    this.currentPage = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.updatePage();
+  }
+
+  updatePage(): void {
+    const startIndex = this.currentPage * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.filteredBookings = this.bookings.slice(startIndex, endIndex);
   }
 
   onDelete(booking_id: number): void {

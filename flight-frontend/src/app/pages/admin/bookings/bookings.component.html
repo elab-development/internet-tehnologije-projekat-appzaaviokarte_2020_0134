@@ -12,100 +12,44 @@
       />
     </div>
 
-    <mat-table
-      [dataSource]="dataSource"
-      class="bookings-table mat-elevation-z8"
-    >
-      <!-- Username Column -->
-      <ng-container matColumnDef="username">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          User
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.user.username }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="flight_id">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Flight ID
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.flight_id }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="booking_date">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Booking Date
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.booking_date }}
-        </td>
-      </ng-container>
-
-      <!-- Origin Column -->
-      <ng-container matColumnDef="origin">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Origin
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.flight.origin }}
-        </td>
-      </ng-container>
-
-      <!-- Destination Column -->
-      <ng-container matColumnDef="destination">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Destination
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.flight.destination }}
-        </td>
-      </ng-container>
-
-      <!-- Departure Date Column -->
-      <ng-container matColumnDef="departure_date">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Departure Date
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.flight.departure_date | date : "yyyy-MM-dd HH:mm" }}
-        </td>
-      </ng-container>
-
-      <!-- Arrival Date Column -->
-      <ng-container matColumnDef="arrival_date">
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          Arrival Date
-        </th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
-          {{ booking.flight.arrival_date | date : "yyyy-MM-dd HH:mm" }}
-        </td>
-      </ng-container>
-
-      <!-- Actions Column -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef class="center-text header"></th>
-        <td mat-cell *matCellDef="let booking" class="center-text column-text">
+    <div class="booking-cards-container">
+      <div *ngFor="let booking of filteredBookings" class="booking-card">
+        <div class="booking-header">
+          <h3>User: {{ booking.user.username }}</h3>
+          <p>Flight ID: {{ booking.flight_id }}</p>
+        </div>
+        <div class="booking-info">
+          <p><strong>Booking Date:</strong> {{ booking.booking_date }}</p>
+          <p><strong>Origin:</strong> {{ booking.flight.origin }}</p>
+          <p><strong>Destination:</strong> {{ booking.flight.destination }}</p>
+          <p>
+            <strong>Departure:</strong>
+            {{ booking.flight.departure_date | date : "yyyy-MM-dd HH:mm" }}
+          </p>
+          <p>
+            <strong>Arrival:</strong>
+            {{ booking.flight.arrival_date | date : "yyyy-MM-dd HH:mm" }}
+          </p>
+        </div>
+        <div class="booking-actions">
           <button
             mat-button
-            class="delete-btn"
             color="warn"
             (click)="onDelete(booking.booking_id)"
           >
-            <mat-icon>delete</mat-icon>
-            Delete
+            <mat-icon>delete</mat-icon> Delete
           </button>
-        </td>
-      </ng-container>
+        </div>
+      </div>
+    </div>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </mat-table>
-
+    <!-- Paginacija -->
     <div class="paginator-container">
-      <mat-paginator [pageSizeOptions]="[4, 8, 12]"></mat-paginator>
+      <mat-paginator
+        [pageSizeOptions]="[4, 8, 12]"
+        showFirstLastButtons
+        (page)="onPaginate($event)"
+      ></mat-paginator>
     </div>
   </div>
 </div>

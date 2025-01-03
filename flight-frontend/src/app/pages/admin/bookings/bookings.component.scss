@@ -1,34 +1,17 @@
 .bookings-page {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   height: 100%;
 }
 
 .page {
   width: 100%;
-  padding: 80px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   background-color: #d6d8e4;
-}
-
-.bookings-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  background-color: #333;
-  border-radius: 5px;
-  overflow: hidden;
-  display: table;
-  table-layout: fixed;
-}
-
-.mat-header-cell,
-.mat-cell {
-  text-align: center;
-}
-
-.mat-mdc-cell {
-  color: #e0d7d7;
+  margin: 0 auto;
 }
 
 .search-container {
@@ -50,32 +33,68 @@
   color: #d2cece;
 }
 
-.search-container .add-btn {
-  background-color: #f2d293;
-  color: #000000;
-  transition: background-color 0.3s, color 0.3s;
+.booking-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.search-container .add-btn:hover {
-  background-color: #ecb74c;
+.booking-card {
+  background-color: #333;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #1e72b8; /* Border color */
+}
+
+.booking-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.booking-header h3 {
   color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-.column-text {
-  vertical-align: middle;
-  font-size: medium;
-  padding-bottom: 10px;
+.booking-info {
+  font-size: 0.9rem;
+  color: #d2cece;
 }
 
-.header {
-  font-size: medium;
+.booking-actions button {
+  margin-top: 10px;
+}
+
+.mat-icon {
+  margin-right: 5px;
+}
+
+button.mat-button {
+  background-color: #e74c3c;
   color: #ffffff;
-}
-
-button[mat-raised-button] {
-  margin: 10px 20px;
+  font-size: 1rem;
   padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 30px;
+}
+
+button.mat-button:hover {
+  background-color: #c0392b;
+}
+
+.paginator-container {
+  margin-top: auto;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 mat-paginator {
@@ -83,14 +102,4 @@ mat-paginator {
   color: #d2cece;
   border-radius: 8px;
   padding: 8px;
-}
-
-.paginator-container {
-  margin-top: auto;
-  padding: 40px 0 0px;
-  bottom: 0;
-}
-
-.mat-mdc-select-value-text {
-  color: #ecf0f1;
 }

@@ -1,12 +1,12 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../../../services/user.service';
 import { UpdateUserDialogComponent } from '../../../dialogs/update-user-dialog/update-user-dialog.component';
 import { AddUserDialogComponent } from '../../../dialogs/add-user-dialog/add-user-dialog.component';
-import {MatTableDataSource} from "@angular/material/table";
-import {Airport} from "../../../models/airport";
-import {MatPaginator} from "@angular/material/paginator";
-import {User} from "../../../models/user";
+import { MatTableDataSource } from '@angular/material/table';
+import { Airport } from '../../../models/airport';
+import { MatPaginator } from '@angular/material/paginator';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-users',
@@ -17,8 +17,8 @@ export class UsersComponent implements OnInit {
   users: any[] = [];
   filteredUsers: any[] = [];
   searchTerm: string = '';
-  displayedColumns: string[] = ['username', 'email', 'role'];
-  dataSource = new MatTableDataSource<User>();
+  currentPage: number = 0;
+  pageSize: number = 4;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -32,9 +32,7 @@ export class UsersComponent implements OnInit {
     this.userService.getAllUsers().subscribe((data: any[]) => {
       this.users = data;
       this.filteredUsers = data;
-      this.dataSource.data = this.users;
-      this.dataSource.paginator = this.paginator;
-
+      this.updatePage();
     });
   }
 
@@ -45,14 +43,23 @@ export class UsersComponent implements OnInit {
         user.email.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
         user.role.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    this.updatePage();
+  }
 
-    this.dataSource.data = this.filteredUsers;
-    this.dataSource.paginator = this.paginator;
+  onPaginate(event: any): void {
+    this.currentPage = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.updatePage();
+  }
+
+  updatePage(): void {
+    const startIndex = this.currentPage * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.filteredUsers = this.users.slice(startIndex, endIndex);
   }
 
   onCreatingNewUser(): void {
     const dialogRef = this.dialog.open(AddUserDialogComponent);
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.userService.createUser(result).subscribe(() => {
@@ -66,7 +73,6 @@ export class UsersComponent implements OnInit {
     const dialogRef = this.dialog.open(UpdateUserDialogComponent, {
       data: user,
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.userService.updateUser(user.user_id, result).subscribe(() => {

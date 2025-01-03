@@ -20,31 +20,18 @@
       </button>
     </div>
 
-    <mat-table
-      [dataSource]="dataSource"
-      class="airports-table mat-elevation-z8"
-    >
-      <ng-container
-        [matColumnDef]="column"
-        *ngFor="let column of displayedColumns"
-      >
-        <th mat-header-cell *matHeaderCellDef class="center-text header">
-          {{ column | titlecase }}
-        </th>
-        <td mat-cell *matCellDef="let airport" class="center-text column-text">
-          {{ airport[column] }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef class="center-text header"></th>
-        <td mat-cell *matCellDef="let airport" class="center-text">
-          <button
-            mat-button
-            color="primary"
-            #updateButton
-            (click)="onUpdate(airport)"
-          >
+    <div class="airports-container">
+      <div class="airport-card" *ngFor="let airport of filteredAirports">
+        <div class="airport-card-header">
+          <h3>{{ airport.name }}</h3>
+          <p>{{ airport.city }}, {{ airport.country }}</p>
+        </div>
+        <div class="airport-card-body">
+          <p><strong>City:</strong> {{ airport.city }}</p>
+          <p><strong>Country:</strong> {{ airport.country }}</p>
+        </div>
+        <div class="airport-card-footer">
+          <button mat-button color="primary" (click)="onUpdate(airport)">
             <mat-icon>edit</mat-icon> Update
           </button>
           <button
@@ -55,18 +42,9 @@
           >
             <mat-icon>delete</mat-icon> Delete
           </button>
-        </td>
-      </ng-container>
-
-      <tr
-        mat-header-row
-        *matHeaderRowDef="displayedColumns.concat('actions')"
-      ></tr>
-      <tr
-        mat-row
-        *matRowDef="let row; columns: displayedColumns.concat('actions')"
-      ></tr>
-    </mat-table>
+        </div>
+      </div>
+    </div>
 
     <div class="paginator-container">
       <mat-paginator

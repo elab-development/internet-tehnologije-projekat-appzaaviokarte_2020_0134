@@ -1,11 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AirportService } from '../../../services/airport.service';
 import { Airport } from '../../../models/airport';
 import { UpdateAirportDialogComponent } from '../../../dialogs/update-airport-dialog/update-airport-dialog.component';
 import { AddAirportDialogComponent } from '../../../dialogs/add-airport-dialog/add-airport-dialog.component';
-import {MatPaginator} from "@angular/material/paginator";
-import {MatTableDataSource} from "@angular/material/table";
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-airports',
@@ -16,7 +16,6 @@ export class AirportsComponent implements OnInit {
   airports: Airport[] = [];
   filteredAirports: Airport[] = [];
   searchTerm: string = '';
-  displayedColumns: string[] = ['name', 'city', 'country'];
   dataSource = new MatTableDataSource<Airport>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -36,7 +35,6 @@ export class AirportsComponent implements OnInit {
       this.filteredAirports = airports;
       this.dataSource.data = airports;
       this.dataSource.paginator = this.paginator;
-
     });
   }
 
@@ -51,7 +49,6 @@ export class AirportsComponent implements OnInit {
     } else {
       this.filteredAirports = this.airports;
     }
-
     this.dataSource.data = this.filteredAirports;
     this.dataSource.paginator = this.paginator;
   }
