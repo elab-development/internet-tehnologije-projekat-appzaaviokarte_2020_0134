@@ -1,27 +1,22 @@
 .flights-page {
   display: flex;
-}
-
-.sidebar-container {
-  width: 250px;
-  background-color: #f2d293;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .page {
   width: 100%;
-  padding: 20px;
+  padding: 80px;
   display: flex;
   flex-direction: column;
-  background-color: #373633;
+  background-color: #d6d8e4;
 }
 
 .flights-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 10px;
-  background-color: #f2d293;
-  border-radius: 12px;
+  background-color: #333;
+  border-radius: 5px;
   overflow: hidden;
   display: table;
   table-layout: fixed;
@@ -33,7 +28,7 @@
 }
 
 .mat-mdc-cell {
-  color: #000000;
+  color: #e0d7d7;
 }
 
 .search-container {
@@ -47,22 +42,22 @@
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #000000;
-  background-color: #f2d293;
-  color: #000000;
+  background-color: #333;
+  color: #d2cece;
 }
 
 .search-container input::placeholder {
-  color: #000000;
+  color: #d2cece;
 }
 
 .search-container .add-btn {
-  background-color: #f2d293;
-  color: #000000;
+  background-color: #333;
+  color: #d2cece;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .search-container .add-btn:hover {
-  background-color: #ecb74c;
+  background-color: #333;
   color: #ffffff;
 }
 
@@ -74,7 +69,7 @@
 
 .header {
   font-size: medium;
-  color: #000000;
+  color: #ffffff;
 }
 
 button[mat-raised-button] {
@@ -84,8 +79,8 @@ button[mat-raised-button] {
 }
 
 mat-paginator {
-  background-color: #f2d293;
-  color: #000000;
+  background-color: #333;
+  color: #d2cece;
   border-radius: 8px;
   padding: 8px;
 }

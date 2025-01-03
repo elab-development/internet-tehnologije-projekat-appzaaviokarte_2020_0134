@@ -1,16 +1,66 @@
-<aside class="menu">
-  <ul class="menu-list">
-    <li><a routerLink="/airports" routerLinkActive="is-active">Airports</a></li>
-    <li><a routerLink="/flights" routerLinkActive="is-active">Flights</a></li>
-    <li><a routerLink="/users" routerLinkActive="is-active">Users</a></li>
-    <li><a routerLink="/bookings" routerLinkActive="is-active">Bookings</a></li>
+<mat-toolbar *ngIf="showNavbar" class="full_navbar">
+  <span class="title">Admin: {{ user?.username }}</span>
+  <ul class="nav__buttons">
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/airports"
+        [disabled]="disableButtons"
+      >
+        Airports
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/flights"
+        [disabled]="disableButtons"
+      >
+        Flights
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/users"
+        [disabled]="disableButtons"
+      >
+        Users
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/bookings"
+        [disabled]="disableButtons"
+      >
+        Bookings
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/dashboard"
+        [disabled]="disableButtons"
+      >
+        Home
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        (click)="logout()"
+        [disabled]="disableButtons"
+      >
+        Logout
+      </button>
+    </li>
   </ul>
-  <div class="menu-bottom">
-    <ul class="menu-list">
-      <li>
-        <a routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
-      </li>
-      <li><a (click)="logout()">Logout</a></li>
-    </ul>
-  </div>
-</aside>
+</mat-toolbar>
+<router-outlet></router-outlet>

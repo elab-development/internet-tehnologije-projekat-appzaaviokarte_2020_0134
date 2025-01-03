@@ -8,7 +8,14 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  showNavbar: boolean = true;
+  disableButtons: boolean = false;
+  user: any;
   constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+  }
 
   logout(): void {
     this.authService.logout().subscribe({

@@ -31,6 +31,10 @@
     padding: 15px 20px;
     color: #333;
   }
+
+  .button:hover {
+    background-color: #8c9be4;
+  }
   .nav__buttons {
     display: flex;
     gap: 10px;

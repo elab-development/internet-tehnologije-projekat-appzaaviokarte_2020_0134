@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateDialogComponent } from '../../../dialogs/update-flight-dialog/update-dialog.component';
 import { AddFlightDialogComponent } from '../../../dialogs/add-flight-dialog/add-flight-dialog.component';
-import {MatPaginator} from "@angular/material/paginator";
-import {Flight} from "../../../models/flight";
+import { MatPaginator } from '@angular/material/paginator';
+import { Flight } from '../../../models/flight';
 @Component({
   selector: 'app-flights',
   templateUrl: './flights.component.html',

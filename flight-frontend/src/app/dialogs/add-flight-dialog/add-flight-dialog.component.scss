@@ -2,7 +2,7 @@
   width: 100%;
 }
 .dialog {
-  background-color: #ecb74c; /* Tamna pozadina za ceo dijalog */
+  background-color: #b8c1ee; /* Tamna pozadina za ceo dijalog */
   color: #ecf0f1; /* Svetla boja teksta */
   padding: 20px;
   border-radius: 10px;
@@ -12,11 +12,6 @@
   color: #000000; /* Svetlija boja naslova */
   font-size: 24px;
   margin-bottom: 20px;
-}
-
-.dialog mat-form-field {
-  background-color: #f2d293; /* Tamna pozadina za input polja */
-  border-radius: 5px;
 }
 
 .dialog input {
