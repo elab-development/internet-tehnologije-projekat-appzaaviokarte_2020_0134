@@ -38,6 +38,7 @@ export class WebsiteLandingComponent {
       '/register',
       '/login',
       '/airports',
+      '/home',
     ];
 
     this.showNavbar = !hiddenNavbarUrls.includes(currentUrl);

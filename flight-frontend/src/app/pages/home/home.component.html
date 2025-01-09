@@ -1,0 +1,316 @@
+<header class="header">
+  <nav class="nav">
+    <img src="assets/img/logo1.png" alt="Logo" class="nav__logo" id="logo" />
+    <ul class="nav__links">
+      <li class="nav__item">
+        <a class="nav__link" (click)="scrollTo('search-section')"
+          >Choose a flight</a
+        >
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" (click)="scrollTo('section--1')">Recommended</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" (click)="scrollTo('section--2')">Features</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" (click)="scrollTo('section--3')">Testimonials</a>
+      </li>
+      <li class="nav__item">
+        <button mat-button class="button" routerLink="/login">Login</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="header__title">
+    <h1>
+      Book
+      <!-- Green highlight effect -->
+      <span class="highlight">your</span>
+      flight<br />
+      <span class="highlight">easier</span>
+    </h1>
+    <h4>A simpler booking experience for a simpler life.</h4>
+    <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+    <img src="assets/img/plane.png" class="header__img" />
+  </div>
+</header>
+
+<section class="section search-section" id="search-section">
+  <div class="section__title">
+    <h2 class="section__description">Choose a flight</h2>
+    <h3 class="section__header">
+      Everything you need to schedule your dream vacation.
+    </h3>
+  </div>
+
+  <div class="discover-container">
+    <div class="text-section">
+      <h2 class="discover-title">It's time to discover</h2>
+      <p class="discover-subtitle">Discover amazing places around the world</p>
+    </div>
+    <div class="action-section">
+      <span class="arrow">&#8594;</span>
+      <button class="discover-button" routerLink="/login">Discover Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="section--1">
+  <div class="section__title">
+    <h2 class="section__description">Recommended</h2>
+    <h3 class="section__header">Best destinations.</h3>
+  </div>
+
+  <div class="features">
+    <img
+      src="assets/img/france.jpg"
+      data-src="assets/img/france.jpg"
+      alt="France"
+      class="features__img lazy-img"
+    />
+    <div class="features__feature">
+      <h5 class="features__header">France</h5>
+      <p>
+        France, located in Western Europe, is renowned for its rich history,
+        culture, and artistic heritage. Its capital, Paris, known as the "City
+        of Light," boasts iconic landmarks like the Eiffel Tower and the Louvre
+        Museum. French cuisine, featuring croissants, baguettes, and fine
+        cheeses, is celebrated worldwide. The country's landscapes vary from the
+        majestic Alps in the east to the picturesque Mediterranean coastline in
+        the south. France is also a global leader in fashion and luxury, home to
+        prestigious brands like Chanel and Louis Vuitton.
+      </p>
+    </div>
+
+    <div class="features__feature_italy">
+      <h5 class="features__header">Italy</h5>
+      <p>
+        Italy, situated in Southern Europe on the Apennine Peninsula, is famed
+        for its cultural and architectural legacy. Its capital, Rome, once the
+        heart of the Roman Empire, houses historic landmarks such as the
+        Colosseum and the Vatican. Italian cuisine, including pizza, pasta, and
+        gelato, is beloved across the globe. The country's stunning landscapes
+        range from the rolling hills of Tuscany to the dramatic Amalfi Coast.
+        Italy is synonymous with design and elegance, hosting world-class
+        fashion houses like Gucci and Prada.
+      </p>
+    </div>
+    <img
+      src="assets/img/italy.jpg"
+      data-src="assets/img/italy.jpg"
+      alt="Italy"
+      class="features__img lazy-img"
+    />
+
+    <img
+      src="assets/img/maldives.jpg"
+      data-src="assets/img/maldives.jpg"
+      alt="Maldives"
+      class="features__img lazy-img"
+    />
+    <div class="features__feature">
+      <h5 class="features__header">Maldives</h5>
+      <p>
+        The Maldives, an island nation in the Indian Ocean, is known for its
+        crystal-clear waters, white sandy beaches, and vibrant coral reefs. Its
+        capital, Malé, serves as the administrative and cultural hub of the
+        nation. The country is a sought-after destination for luxury tourism,
+        offering overwater bungalows and world-class diving experiences. The
+        Maldives is also vulnerable to climate change due to its low-lying
+        geography. Its serene environment and natural beauty make it a paradise
+        for honeymooners and travelers seeking tranquility.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="section--2">
+  <div class="section__title">
+    <h2 class="section__description">Features</h2>
+    <h3 class="section__header">
+      Everything you need to schedule your dream vacation and more.
+    </h3>
+  </div>
+
+  <div class="operations">
+    <div class="operations__tab-container">
+      <button
+        class="btn operations__tab operations__tab--1 operations__tab--active"
+        data-tab="1"
+      >
+        <span>01</span> Best prices
+      </button>
+      <button class="btn operations__tab operations__tab--2" data-tab="2">
+        <span>02</span> Easy pay
+      </button>
+      <button class="btn operations__tab operations__tab--3" data-tab="3">
+        <span>03</span> High security
+      </button>
+    </div>
+    <div
+      class="operations__content operations__content--1 operations__content--active"
+    >
+      <div class="operations__icon operations__icon--1">
+        <svg>
+          <use xlink:href="assets/img/icons.svg#icon-check"></use>
+        </svg>
+      </div>
+      <h5 class="operations__header">Unbeatable Prices for Your Journeys</h5>
+      <p>
+        We bring you the best deals to make your travel dreams affordable.
+        Compare and book flights at prices tailored to fit your budget without
+        compromising on quality. Save more and travel smarter with our exclusive
+        offers!
+      </p>
+    </div>
+
+    <div class="operations__content operations__content--2">
+      <div class="operations__icon operations__icon--2">
+        <svg>
+          <use xlink:href="assets/img/icons.svg#icon-dollar-sign"></use>
+        </svg>
+      </div>
+      <h5 class="operations__header">Convenient Payment Options</h5>
+      <p>
+        Book your flights hassle-free with our user-friendly payment system.
+        Choose from multiple secure payment methods, including installments, to
+        match your convenience. Travel planning has never been easier!
+      </p>
+    </div>
+    <div class="operations__content operations__content--3">
+      <div class="operations__icon operations__icon--3">
+        <svg>
+          <use xlink:href="assets/img/icons.svg#icon-trending-up"></use>
+        </svg>
+      </div>
+      <h5 class="operations__header">Your Safety, Our Priority</h5>
+      <p>
+        Experience peace of mind with our top-notch security measures for online
+        bookings. Your personal and financial information is protected with
+        advanced encryption technologies. Trust us to keep your data safe at
+        every step.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="section--3">
+  <div class="section__title section__title--testimonials">
+    <h2 class="section__description">Not sure yet?</h2>
+    <h3 class="section__header">
+      Millions of travelers are already making their lifes simpler.
+    </h3>
+  </div>
+
+  <div class="slider">
+    <div class="slide slide--1">
+      <div class="testimonial">
+        <h5 class="testimonial__header">A Seamless Booking Experience!</h5>
+        <blockquote class="testimonial__text">
+          I couldn’t believe how quick and easy it was to book my flight! The
+          website's design is intuitive, making it simple to navigate and find
+          exactly what I needed. Within minutes, I had compared multiple flight
+          options and locked in a great deal. The confirmation process was
+          smooth, and I appreciated the clear instructions at every step. It
+          saved me so much time compared to other booking platforms I’ve used.
+          I’ll definitely return to book my future trips!
+        </blockquote>
+        <address class="testimonial__author">
+          <img src="assets/img/user-1.png" alt="" class="testimonial__photo" />
+          <h6 class="testimonial__name">Jovana Jankovic</h6>
+          <p class="testimonial__location">Belgrade, Serbia</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="slide slide--2">
+      <div class="testimonial">
+        <h5 class="testimonial__header">Affordable and Reliable</h5>
+        <blockquote class="testimonial__text">
+          This platform is a game-changer for budget-conscious travelers like
+          me. I found flights that were significantly cheaper than on other
+          websites, without sacrificing quality or convenience. The ability to
+          compare so many options in one place was incredibly helpful. Booking
+          was straightforward, and I received instant confirmation with all the
+          details I needed. It’s refreshing to find a service that delivers
+          exactly what it promises. I highly recommend it to anyone looking for
+          reliable and affordable travel solutions.
+        </blockquote>
+        <address class="testimonial__author">
+          <img src="assets/img/user-2.png" alt="" class="testimonial__photo" />
+          <h6 class="testimonial__name">Pavle Dimitrijevic</h6>
+          <p class="testimonial__location">Belgrade, Serbia</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="slide slide--3">
+      <div class="testimonial">
+        <h5 class="testimonial__header">Safe and Trustworthy</h5>
+        <blockquote class="testimonial__text">
+          As someone who values online security, I was initially hesitant to
+          book flights online. However, this platform exceeded my expectations
+          with its secure and transparent payment process. I felt reassured
+          knowing my personal and financial data was protected. The customer
+          support team was also quick to answer my questions, which added to my
+          confidence. I received my booking confirmation immediately, and
+          everything went smoothly. I’ll definitely use this site again for my
+          next trip!
+        </blockquote>
+        <address class="testimonial__author">
+          <img src="assets/img/user-3.jpg" alt="" class="testimonial__photo" />
+          <h6 class="testimonial__name">Francisco Gomes</h6>
+          <p class="testimonial__location">Lisbon, Portugal</p>
+        </address>
+      </div>
+    </div>
+
+    <!-- <div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
+      <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
+      <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
+      <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div> -->
+    <button class="slider__btn slider__btn--left">&larr;</button>
+    <button class="slider__btn slider__btn--right">&rarr;</button>
+    <div class="dots"></div>
+  </div>
+</section>
+
+<section class="section section--sign-up">
+  <div class="section__title">
+    <h3 class="section__header">
+      The best day to join Flightly was one year ago. The second best is today!
+    </h3>
+  </div>
+  <button class="btn" routerLink="/register">Register!</button>
+</section>
+
+<footer class="footer">
+  <ul class="footer__nav">
+    <li class="footer__item">
+      <a class="footer__link" href="#">About</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Pricing</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Terms of Use</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Privacy Policy</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Careers</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Blog</a>
+    </li>
+    <li class="footer__item">
+      <a class="footer__link" href="#">Contact Us</a>
+    </li>
+  </ul>
+  <img src="assets/img/logo1.png" alt="Logo" class="footer__logo" />
+  <p class="footer__copyright">
+    &copy; Copyright by
+    <a class="footer__link twitter-link" target="_blank">Flightly</a>.
+  </p>
+</footer>

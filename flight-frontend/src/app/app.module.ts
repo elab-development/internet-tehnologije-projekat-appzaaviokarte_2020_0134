@@ -43,6 +43,7 @@ import { AirportsComponent } from './pages/admin/airports/airports.component';
 import { UpdateAirportDialogComponent } from './dialogs/update-airport-dialog/update-airport-dialog.component';
 import { AddAirportDialogComponent } from './dialogs/add-airport-dialog/add-airport-dialog.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HomeComponent } from './pages/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AirportsComponent,
     UpdateAirportDialogComponent,
     AddAirportDialogComponent,
+    HomeComponent,
   ],
 
   imports: [

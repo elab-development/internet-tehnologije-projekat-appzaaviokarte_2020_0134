@@ -15,6 +15,7 @@ import { UserGuard } from './guards/user.guard';
 import { UsersComponent } from './pages/admin/users/users.component';
 import { BookingsComponent } from './pages/admin/bookings/bookings.component';
 import { AirportsComponent } from './pages/admin/airports/airports.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,7 +31,9 @@ const routes: Routes = [
   { path: 'bookings', component: BookingsComponent, canActivate: [AuthGuard] },
   { path: 'airports', component: AirportsComponent, canActivate: [AuthGuard] },
   //User
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'search', component: SearchComponent, canActivate: [UserGuard] },
   {
     path: 'my-bookings',
