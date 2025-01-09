@@ -5,10 +5,10 @@
 
 .page {
   width: 100%;
-  padding: 100px;
+  padding: 80px;
   display: flex;
   flex-direction: column;
-  background-color: #d6d8e4;
+  background-color: #f4f6f9;
 }
 
 .user-cards-container {
@@ -60,13 +60,9 @@
 .search-container input {
   width: 300px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid #000000;
-  background-color: #333;
-  color: #d2cece;
-}
-
-.search-container input::placeholder {
+  background-color: #b8c1ee;
   color: #d2cece;
 }
 

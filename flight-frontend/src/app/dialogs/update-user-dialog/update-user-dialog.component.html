@@ -1,8 +1,13 @@
 <div class="dialog">
-  <h1 mat-dialog-title>Update User</h1>
+  <div class="dialog-header">
+    <h1 mat-dialog-title>Update User</h1>
+    <button mat-icon-button (click)="onCancel()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
   <div mat-dialog-content>
-    <form [formGroup]="userForm">
-      <mat-form-field appearance="fill" class="full-width">
+    <form [formGroup]="userForm" class="dialog-form">
+      <mat-form-field appearance="fill" class="input-field">
         <mat-label>Username</mat-label>
         <input matInput formControlName="username" />
         <mat-error *ngIf="userForm.get('username')?.hasError('required')">
@@ -13,7 +18,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="full-width">
+      <mat-form-field appearance="fill" class="input-field">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" />
         <mat-error *ngIf="userForm.get('email')?.hasError('required')">
@@ -24,7 +29,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="full-width">
+      <mat-form-field appearance="fill" class="input-field">
         <mat-label>Role</mat-label>
         <mat-select formControlName="role">
           <mat-option value="admin">Admin</mat-option>
@@ -37,7 +42,9 @@
     </form>
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="onCancel()">Cancel</button>
-    <button mat-button (click)="onSubmit()">Submit</button>
+    <button mat-button class="cancel-btn" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Submit
+    </button>
   </div>
 </div>

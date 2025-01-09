@@ -10,7 +10,7 @@
   padding: 40px;
   display: flex;
   flex-direction: column;
-  background-color: #d6d8e4;
+  background-color: #f4f6f9;
   margin: 0 auto;
 }
 
@@ -21,16 +21,11 @@
 }
 
 .search-container input {
-  width: 300px;
+  width: 250px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid #000000;
-  background-color: #333;
-  color: #d2cece;
-}
-
-.search-container input::placeholder {
-  color: #d2cece;
+  background-color: #b8c1ee;
 }
 
 .booking-cards-container {

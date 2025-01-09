@@ -1,58 +1,83 @@
-.full-width {
-  width: 100%;
-}
-
 .dialog {
-  background-color: #b8c1ee;
-  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #eef2f3);
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-out;
+  width: 400px;
+  max-width: 100%;
+  margin: auto;
 }
 
 .dialog h1 {
-  font-size: 24px;
-  color: #000000;
+  font-size: 26px;
   font-weight: bold;
+  color: #2c3e50;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .dialog mat-dialog-content {
-  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dialog .form-group {
+  margin-bottom: 10px;
 }
 
 .dialog mat-form-field {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .dialog mat-error {
-  color: #ff0400;
-  font-size: 12px;
+  color: #e74c3c;
+  font-size: 0.9em;
 }
 
-.dialog mat-dialog-actions {
+mat-dialog-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
 }
 
-.dialog mat-dialog-actions button {
-  color: black;
-  background-color: #2980b9;
-  border-radius: 5px;
+.cancel-btn {
+  background-color: transparent;
+  color: #1a237e;
+  border: 1px solid #1a237e;
   padding: 8px 16px;
-  margin-left: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+.submit-btn {
+  background-color: #1a237e;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
   transition: background-color 0.3s ease;
 }
 
-.dialog mat-dialog-actions button:hover {
-  background-color: #3498db;
+.submit-btn:hover {
+  background-color: #3949ab;
 }
 
-.dialog mat-dialog-actions button:first-child {
-  background-color: #95a5a6;
-}
-
-.dialog mat-dialog-actions button:first-child:hover {
-  background-color: #bdc3c7;
+/* Animacije */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
