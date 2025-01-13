@@ -36,7 +36,7 @@
               "node_modules/bulma/css/bulma.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/script.js"]
           },
           "configurations": {
             "production": {
