@@ -17,14 +17,19 @@
         <a class="nav__link" (click)="scrollTo('section--3')">Testimonials</a>
       </li>
       <li class="nav__item">
-        <button mat-button class="button" routerLink="/login">Login</button>
+        <button
+          mat-raised-button
+          class="button nav__link--btn"
+          routerLink="/login"
+        >
+          Login
+        </button>
       </li>
     </ul>
   </nav>
   <div class="header__title">
-    <h1>
+    <h1 class="header__title1">
       Book
-      <!-- Green highlight effect -->
       <span class="highlight">your</span>
       flight<br />
       <span class="highlight">easier</span>
@@ -45,7 +50,7 @@
 
   <div class="discover-container">
     <div class="text-section">
-      <h2 class="discover-title">It's time to discover</h2>
+      <h5 class="discover-title">It's time to discover</h5>
       <p class="discover-subtitle">Discover amazing places around the world</p>
     </div>
     <div class="action-section">
@@ -127,9 +132,7 @@
 <section class="section" id="section--2">
   <div class="section__title">
     <h2 class="section__description">Features</h2>
-    <h3 class="section__header">
-      Everything you need to schedule your dream vacation and more.
-    </h3>
+    <h3 class="section__header">Why Choose Us</h3>
   </div>
 
   <div class="operations">
@@ -205,15 +208,15 @@
   <div class="slider">
     <div class="slide slide--1">
       <div class="testimonial">
-        <h5 class="testimonial__header">A Seamless Booking Experience!</h5>
+        <h2 class="testimonial__header">A Seamless Booking Experience!</h2>
         <blockquote class="testimonial__text">
-          I couldn’t believe how quick and easy it was to book my flight! The
+          I couldn't believe how quick and easy it was to book my flight! The
           website's design is intuitive, making it simple to navigate and find
           exactly what I needed. Within minutes, I had compared multiple flight
           options and locked in a great deal. The confirmation process was
           smooth, and I appreciated the clear instructions at every step. It
-          saved me so much time compared to other booking platforms I’ve used.
-          I’ll definitely return to book my future trips!
+          saved me so much time compared to other booking platforms I've used.
+          I'll definitely return to book my future trips!
         </blockquote>
         <address class="testimonial__author">
           <img src="assets/img/user-1.png" alt="" class="testimonial__photo" />
@@ -225,14 +228,14 @@
 
     <div class="slide slide--2">
       <div class="testimonial">
-        <h5 class="testimonial__header">Affordable and Reliable</h5>
+        <h2 class="testimonial__header">Affordable and Reliable</h2>
         <blockquote class="testimonial__text">
           This platform is a game-changer for budget-conscious travelers like
           me. I found flights that were significantly cheaper than on other
           websites, without sacrificing quality or convenience. The ability to
           compare so many options in one place was incredibly helpful. Booking
           was straightforward, and I received instant confirmation with all the
-          details I needed. It’s refreshing to find a service that delivers
+          details I needed. It's refreshing to find a service that delivers
           exactly what it promises. I highly recommend it to anyone looking for
           reliable and affordable travel solutions.
         </blockquote>
@@ -246,7 +249,7 @@
 
     <div class="slide slide--3">
       <div class="testimonial">
-        <h5 class="testimonial__header">Safe and Trustworthy</h5>
+        <h2 class="testimonial__header">Safe and Trustworthy</h2>
         <blockquote class="testimonial__text">
           As someone who values online security, I was initially hesitant to
           book flights online. However, this platform exceeded my expectations
@@ -254,7 +257,7 @@
           knowing my personal and financial data was protected. The customer
           support team was also quick to answer my questions, which added to my
           confidence. I received my booking confirmation immediately, and
-          everything went smoothly. I’ll definitely use this site again for my
+          everything went smoothly. I'll definitely use this site again for my
           next trip!
         </blockquote>
         <address class="testimonial__author">
@@ -278,7 +281,8 @@
 <section class="section section--sign-up">
   <div class="section__title">
     <h3 class="section__header">
-      The best day to join Flightly was one year ago. The second best is today!
+      The best day to join Flightly was one year ago. <br />
+      The second best is today!
     </h3>
   </div>
   <button class="btn" routerLink="/register">Register!</button>

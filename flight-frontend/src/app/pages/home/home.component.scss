@@ -17,62 +17,101 @@
 // }
 
 :host {
+  // font-size: 62.5%;
+  // box-sizing: border-box;
+  // font-family: "Poppins", sans-serif;
+  // font-weight: 300;
+  // color: #444;
+  // line-height: 1.9;
+  // background-color: #d6d8e4;
+
   nav {
-    font-size: 1rem; // ili željena veličina
-    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-family: "Varela Round", serif;
     font-weight: 400;
     line-height: 1.5;
     margin: 0;
   }
 
   a {
-    font-size: 1rem; // ili željena veličina
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Poppins", serif;
+    font-weight: 500;
     line-height: 1.5;
     margin: 0;
+    color: #151515;
   }
 
   h1 {
-    font-size: 4rem; // ili željena veličina
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-size: 4rem;
+    font-family: "Varela Round", serif;
+    font-weight: 600;
     line-height: 1.5;
     margin: 0;
+    margin-left: 3rem;
   }
 
   h2 {
-    font-size: 2rem; // ili željena veličina
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-family: "Varela Round", serif;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-left: 9rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    font-family: "Poppins", serif;
+    font-weight: 500;
     line-height: 1.5;
-    margin: 0;
+    margin-left: 9rem;
   }
 
   h4 {
-    font-size: 1.4rem; // ili željena veličina
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-family: "Poppins", serif;
+    font-weight: 500;
     line-height: 1.5;
-    margin: 0;
+    margin-left: 4rem;
+  }
+
+  h5 {
+    font-size: 2rem;
+    font-family: "Varela Round", serif;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+    font-family: "Varela Round", serif;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-left: 9rem;
   }
 
   p {
-    font-size: 1rem; // ili željena veličina
-
+    font-size: 1rem;
+    font-family: "Varela Round", serif;
+    color: #777777;
     font-weight: 400;
     line-height: 1.5;
     margin: 0;
   }
 
-  font-size: 62.5%;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  color: #444;
-  line-height: 1.9;
-  background-color: #d6d8e4;
+  img {
+    transition: filter 0.5s;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+    font-family: "Varela Round", serif;
+  }
 }
+
+////////////////////////////////////////////////////////////
+
+/*SEARCH SECTION*/
 
 .search-section {
   font-size: 1.2rem;
@@ -84,74 +123,61 @@
   justify-content: center;
   align-items: center;
   padding: 18.1rem 3rem;
-  /* padding: 80px 5px; */
   min-height: 60vh;
   border: 0px;
   background-color: #d6d8e4;
-
-  /* padding: 15rem 3rem;
-    border-top: 1px solid #ddd;
-    transition: transform 1s, opacity 1s; */
 }
-
-/********************************/
 
 .discover-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(
-    to right,
-    #18191b,
-    #3f4143
-  ); /* Gradient pozadina */
-  padding: 40px 60px; /* Povećava unutrašnji razmak */
+  height: 12rem;
+  background: linear-gradient(to right, #131314, #2e2e30);
+  padding: 40px 80px;
+  width: 65rem;
   border-radius: 20px;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 1100px; /* Širina diva, možete povećati ako želite */
-  margin: 20px auto;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .text-section {
-  max-width: 60%;
+  max-width: 90%;
 }
 
 .discover-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 32px; /* Povećan font naslova */
-  margin: 0;
+  margin: 2px;
   color: #ffffff;
 }
 
 .discover-subtitle {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px; /* Povećan font podnaslova */
-  margin: 5px 0 0; /* Smanjen razmak između naslova i podnaslova */
-  color: #5c5959;
+  font-size: 18px;
+  margin: 5px 0 0;
 }
 
 .action-section {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Poravnava strelicu i dugme desno */
-  gap: 60px; /* Povećava razmak između strelice i dugmeta */
+  justify-content: flex-end;
+  gap: 75px;
 }
 
 .arrow {
-  font-size: 40px; /* Povećava veličinu strelice */
+  font-size: 60px;
   font-weight: bold;
-  margin-right: auto; /* Pomeranje strelice ka centru */
+  margin-right: auto;
 }
 
 .discover-button {
   background-color: #6e95d3;
-  color: #000000;
+  color: #252525;
   border: none;
-  padding: 15px 30px; /* Povećava veličinu dugmeta */
-  font-size: 18px; /* Povećava font u dugmetu */
+  padding: 15px 30px;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   margin-top: 8px;
@@ -161,18 +187,19 @@
   background-color: #3a64a3;
 }
 
+///////////////////////////////////////////////////
 /********************************/
 
 /* GENERAL ELEMENTS */
 .section {
-  padding: 15rem 3rem;
+  padding: 5rem 3rem;
   border-bottom: 1px solid #aaacb4;
   transition: transform 1s, opacity 1s;
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: #444;
-  line-height: 1.9;
+  line-height: 1.5;
   background-color: #d6d8e4;
 }
 
@@ -203,14 +230,15 @@
 .btn {
   display: inline-block;
   background-color: #6e95d3;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family: inherit;
   font-weight: 500;
   border: none;
-  padding: 1.25rem 4.5rem;
+  padding: 1.25rem 3.5rem;
   border-radius: 10rem;
   cursor: pointer;
   transition: all 0.3s;
+  color: #131314;
 }
 
 .btn:hover {
@@ -220,7 +248,8 @@
 .btn--text {
   display: inline-block;
   background: none;
-  font-size: 1.7rem;
+  font-size: 1.1rem;
+  margin-left: 4.2rem;
   font-family: inherit;
   font-weight: 500;
   color: #6e95d3;
@@ -231,26 +260,20 @@
   transition: all 0.3s;
 }
 
-p {
-  color: #666;
-}
+// .lazy-img {
+//   filter: blur(20px);
+// }
 
-img {
-  transition: filter 0.5s;
-}
+////////////////////////////////////////////////////////////
+/* NAV */
 
-.lazy-img {
-  filter: blur(20px);
-}
-
-/* NAVIGATION */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 9rem;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1 1rem;
   z-index: 100;
   margin-top: 1px;
 }
@@ -262,7 +285,8 @@ img {
 
 .nav__logo {
   margin-top: 2px;
-  height: 5.5rem;
+  margin-left: 30px;
+  height: 4.6rem;
   transition: all 0.3s;
 }
 
@@ -270,10 +294,11 @@ img {
   display: flex;
   align-items: center;
   list-style: none;
+  margin-right: 2rem;
 }
 
 .nav__item {
-  margin-left: 4rem;
+  margin-left: 2.5rem;
 }
 
 .nav__link:link,
@@ -285,6 +310,13 @@ img {
   text-decoration: none;
   display: block;
   transition: all 0.3s;
+}
+
+.nav__link--btn {
+  font-size: 1.1rem;
+  height: 3rem;
+  background-color: #6e95d3;
+  color: #2b2b2b;
 }
 
 .nav__link--btn:link,
@@ -301,11 +333,11 @@ img {
   background-color: #436eb4;
   color: #333;
 }
-
+/////////////////////////////////////////////////////////////////
 /* HEADER */
 .header {
   padding: 0 3rem;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,36 +354,31 @@ img {
   flex: 1;
   max-width: 115rem;
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  row-gap: 3rem;
+  grid-template-columns: 3fr 2.5fr;
+  row-gap: 2rem;
   align-content: center;
   justify-content: center;
 
   align-items: start;
   justify-items: start;
-  margin-top: 15rem;
-}
-
-h1 {
-  font-size: 5.5rem;
-  line-height: 1.35;
-}
-
-h4 {
-  font-size: 2.4rem;
-  font-weight: 500;
+  margin-top: 8rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .header__img {
   width: 120%;
   grid-column: 2 / 3;
-  border-radius: 210px;
+  border-radius: 200px;
   grid-row: 1 / span 4;
   transform: translateY(-6rem);
 }
 
 .highlight {
   position: relative;
+  border-radius: 15px;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-color: linear-gradient(to top left, #5896c5, #6671a2);
 }
 
 .highlight::after {
@@ -369,6 +396,10 @@ h4 {
   background-image: linear-gradient(to top left, #5896c5, #6671a2);
 }
 
+////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////
+
 /* FEATURES */
 .features {
   display: grid;
@@ -378,7 +409,8 @@ h4 {
 }
 
 .features__img {
-  width: 85%;
+  width: 90%;
+  height: 25rem;
   border-radius: 40px;
 }
 
@@ -418,11 +450,13 @@ h4 {
   margin-bottom: 1rem;
 }
 
+////////////////////////////////////////////////////////
 /* OPERATIONS */
 .operations {
-  max-width: 95rem;
-  border-radius: 10px;
-  margin: 12rem auto 0 auto;
+  max-width: 60rem;
+  height: 20rem;
+  border-radius: 24px;
+  margin: auto;
   color: #333;
   background-color: #191b1d;
 }
@@ -433,7 +467,7 @@ h4 {
 }
 
 .operations__tab {
-  margin-right: 2.5rem;
+  margin-right: 1.5rem;
   transform: translateY(-50%);
 }
 
@@ -449,8 +483,7 @@ h4 {
 
 .operations__content {
   display: none;
-  font-size: 1.7rem;
-  padding: 2.5rem 7rem 6.5rem 7rem;
+  padding: 1.5rem 4rem 4.5rem 3.2rem;
 }
 
 .operations__content--active {
@@ -471,8 +504,8 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 7rem;
-  width: 7rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
 }
 
@@ -520,11 +553,13 @@ h4 {
 .operations__tab--3:hover {
   background-color: #fd424b;
 }
-
+////////////////////////////////////////////////////
 /* SLIDER */
+
 .slider {
-  max-width: 100rem;
-  height: 50rem;
+  max-width: 70rem;
+  width: 70rem;
+  height: 35rem;
   margin: 0 auto;
   position: relative;
 
@@ -536,7 +571,7 @@ h4 {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 50rem;
+  height: 28rem;
 
   display: flex;
   align-items: center;
@@ -546,16 +581,16 @@ h4 {
   transition: transform 1s;
 }
 
-.slide > img {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+// .slide > img {
+//
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
 
 .slider__btn {
   position: absolute;
-  top: 50%;
+  top: 30%;
   z-index: 10;
 
   border: none;
@@ -563,9 +598,9 @@ h4 {
   font-family: inherit;
   color: #333;
   border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
@@ -615,7 +650,7 @@ h4 {
 
 /* TESTIMONIALS */
 .testimonial {
-  width: 65%;
+  width: 70%;
   position: relative;
 }
 
@@ -639,22 +674,22 @@ h4 {
 
 .testimonial__text {
   font-size: 1.7rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
   color: #666;
 }
 
 .testimonial__author {
-  margin-left: 3rem;
+  margin-left: 2.5rem;
   font-style: normal;
 
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  column-gap: 2rem;
+  grid-template-columns: 4.5rem 1fr;
+  column-gap: 1.5rem;
 }
 
 .testimonial__photo {
   grid-row: 1 / span 2;
-  width: 6.5rem;
+  width: 4.5rem;
   border-radius: 50%;
 }
 
@@ -666,25 +701,26 @@ h4 {
 }
 
 .testimonial__location {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .section__title--testimonials {
   margin-bottom: 4rem;
 }
-
+///////////////////////////////////////////////////////
 /* SIGNUP */
 .section--sign-up {
-  background-color: #37383d;
+  background-color: #46474d;
   border-top: none;
   border-bottom: 1px solid #444;
   text-align: center;
-  padding: 10rem 3rem;
+  padding: 4rem;
 }
 
 .section--sign-up .section__header {
   color: #fff;
   text-align: center;
+  margin: auto;
 }
 
 .section--sign-up .section__title {
@@ -692,21 +728,22 @@ h4 {
 }
 
 .section--sign-up .btn {
-  font-size: 1.9rem;
-  padding: 2rem 5rem;
+  font-size: 1.3rem;
+  padding: 1.5rem 3rem;
+  margin-left: auto;
 }
-
+/////////////////////////////////////////////////////////
 /* FOOTER */
 .footer {
-  padding: 10rem 3rem;
-  background-color: #37383d;
+  padding: 4rem 2rem;
+  background-color: #46474d;
 }
 
 .footer__nav {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .footer__item {
@@ -720,10 +757,10 @@ h4 {
 }
 
 .footer__logo {
-  height: 5rem;
+  height: 4rem;
   display: block;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .footer__copyright {
@@ -733,7 +770,8 @@ h4 {
 }
 
 .footer__copyright .footer__link {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  font-family: "Varela Round", serif;
 }
 
 /* COOKIE MESSAGE */

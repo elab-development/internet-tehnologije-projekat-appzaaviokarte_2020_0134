@@ -148,7 +148,6 @@ export class BookFlightComponent implements OnInit {
       return;
     }
     this.bookingService.updateBooking(bookingId).subscribe((response) => {
-      this.dialog.open(BookingConfirmationComponent);
       this.router.navigate(['/search']);
     });
   }
