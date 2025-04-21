@@ -44,6 +44,8 @@ import { UpdateAirportDialogComponent } from './dialogs/update-airport-dialog/up
 import { AddAirportDialogComponent } from './dialogs/add-airport-dialog/add-airport-dialog.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HomeComponent } from './pages/home/home.component';
+import { IMAGE_CONFIG, NgOptimizedImage } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +82,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatSnackBarModule,
     MatNativeDateModule,
     MatPaginatorModule,
+    NgOptimizedImage,
   ],
   providers: [
     AuthGuard,
@@ -92,6 +95,12 @@ import { HomeComponent } from './pages/home/home.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true,
+    },
+    {
+      provide: IMAGE_CONFIG,
+      useValue: {
+        disableImageSizeWarning: true,
+      },
     },
   ],
   bootstrap: [AppComponent],

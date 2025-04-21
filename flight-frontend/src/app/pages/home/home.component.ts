@@ -13,6 +13,7 @@ export class HomeComponent {
     script.src = 'assets/js/script.js';
     script.type = 'text/javascript';
     script.async = true;
+    script.defer = true;
     this.renderer.appendChild(document.body, script);
   }
 
