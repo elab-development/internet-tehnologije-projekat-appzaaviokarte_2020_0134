@@ -1,0 +1,66 @@
+<mat-toolbar *ngIf="showNavbar" class="full_navbar">
+  <span class="title">Admin: {{ user?.username }}</span>
+  <ul class="nav__buttons">
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/airports"
+        [disabled]="disableButtons"
+      >
+        Airports
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/flights"
+        [disabled]="disableButtons"
+      >
+        Flights
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/users"
+        [disabled]="disableButtons"
+      >
+        Users
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/bookings"
+        [disabled]="disableButtons"
+      >
+        Bookings
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        routerLink="/dashboard"
+        [disabled]="disableButtons"
+      >
+        Home
+      </button>
+    </li>
+    <li class="nav__item">
+      <button
+        mat-button
+        class="button"
+        (click)="logout()"
+        [disabled]="disableButtons"
+      >
+        Logout
+      </button>
+    </li>
+  </ul>
+</mat-toolbar>
+<router-outlet></router-outlet>

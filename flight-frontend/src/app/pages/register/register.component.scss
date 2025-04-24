@@ -1,0 +1,66 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d6d8e4;
+  color: #ecf0f1;
+  font-family: "Varela Round", serif;
+}
+.example-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #191b1d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.title {
+  color: #5979ad;
+  font-weight: 550;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+    color: #ecf0f1;
+  }
+
+  button {
+    width: 90%;
+    margin-left: 15px;
+    background-color: #6e95d3; /* Svetlije plavo */
+    color: #000000;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #436eb4; /* Tamnije plavo na hover */
+    }
+  }
+
+  a {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .noAcc {
+    color: #484848;
+    font-size: 0.9rem;
+  }
+}

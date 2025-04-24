@@ -1,0 +1,52 @@
+<div class="sidebar-container">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="users-page">
+  <div class="page">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search users..."
+        [(ngModel)]="searchTerm"
+        (input)="applyFilter()"
+      />
+      <button
+        class="add-btn"
+        mat-raised-button
+        color="primary"
+        (click)="onCreatingNewUser()"
+      >
+        Add New User
+      </button>
+    </div>
+
+    <!-- Korisnici kao kartice -->
+    <div class="user-cards-container">
+      <div *ngFor="let user of filteredUsers" class="user-card">
+        <div class="user-header">
+          <h3>{{ user.username }}</h3>
+          <p>{{ user.email }}</p>
+        </div>
+        <div class="user-info">
+          <p><strong>Role:</strong> {{ user.role }}</p>
+        </div>
+        <div class="user-actions">
+          <button mat-button color="primary" (click)="onUpdate(user)">
+            <mat-icon>edit</mat-icon> Update
+          </button>
+          <button mat-button color="warn" (click)="onDelete(user)">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginacija -->
+    <div class="paginator-container">
+      <mat-paginator
+        [pageSizeOptions]="[4, 8, 12]"
+        (page)="onPaginate($event)"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="sidebar-container">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="bookings-page">
+  <div class="page">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search bookings..."
+        [(ngModel)]="searchTerm"
+        (input)="applyFilter()"
+      />
+    </div>
+
+    <div class="booking-cards-container">
+      <div *ngFor="let booking of filteredBookings" class="booking-card">
+        <div class="booking-header">
+          <h3>User: {{ booking.user.username }}</h3>
+          <p>Flight ID: {{ booking.flight_id }}</p>
+        </div>
+        <div class="booking-info">
+          <p><strong>Booking Date:</strong> {{ booking.booking_date }}</p>
+          <p><strong>Origin:</strong> {{ booking.flight.origin }}</p>
+          <p><strong>Destination:</strong> {{ booking.flight.destination }}</p>
+          <p>
+            <strong>Departure:</strong>
+            {{ booking.flight.departure_date | date : "yyyy-MM-dd HH:mm" }}
+          </p>
+          <p>
+            <strong>Arrival:</strong>
+            {{ booking.flight.arrival_date | date : "yyyy-MM-dd HH:mm" }}
+          </p>
+        </div>
+        <div class="booking-actions">
+          <button
+            mat-button
+            color="warn"
+            (click)="onDelete(booking.booking_id)"
+          >
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginacija -->
+    <div class="paginator-container">
+      <mat-paginator
+        [pageSizeOptions]="[4, 8, 12]"
+        showFirstLastButtons
+        (page)="onPaginate($event)"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

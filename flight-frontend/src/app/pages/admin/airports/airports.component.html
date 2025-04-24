@@ -1,0 +1,56 @@
+<div class="sidebar-container">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="airports-page">
+  <div class="page">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search airports..."
+        [(ngModel)]="searchTerm"
+        (input)="search()"
+      />
+      <button
+        class="add-btn"
+        mat-raised-button
+        color="primary"
+        (click)="onCreatingNewAirport()"
+      >
+        Add New Airport
+      </button>
+    </div>
+
+    <div class="airports-container">
+      <div class="airport-card" *ngFor="let airport of filteredAirports">
+        <div class="airport-card-header">
+          <h3>{{ airport.name }}</h3>
+          <p>{{ airport.city }}, {{ airport.country }}</p>
+        </div>
+        <div class="airport-card-body">
+          <p><strong>City:</strong> {{ airport.city }}</p>
+          <p><strong>Country:</strong> {{ airport.country }}</p>
+        </div>
+        <div class="airport-card-footer">
+          <button mat-button color="primary" (click)="onUpdate(airport)">
+            <mat-icon>edit</mat-icon> Update
+          </button>
+          <button
+            mat-button
+            class="delete-btn"
+            color="warn"
+            (click)="onDelete(airport)"
+          >
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="paginator-container">
+      <mat-paginator
+        [pageSizeOptions]="[4, 8, 12]"
+        class="pagnum"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

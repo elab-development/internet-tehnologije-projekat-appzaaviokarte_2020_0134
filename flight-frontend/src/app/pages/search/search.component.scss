@@ -1,0 +1,181 @@
+.page {
+  font-family: "Varela Round", serif;
+  background-color: #d6d8e4;
+
+  .section {
+    background-color: #d6d8e4;
+    padding: 40px 0;
+  }
+
+  .section__title-1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .desc {
+    font-size: 25px;
+    margin-left: 10px;
+    font-family: "Varela Round", serif;
+  }
+
+  .section__description {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Varela Round", serif;
+    color: #4a4a4a;
+    margin-bottom: 2px;
+  }
+
+  .section__header {
+    font-size: 14px;
+    font-family: "Varela Round", serif;
+    color: #777;
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0px 80px;
+  }
+
+  .enter-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #323030;
+  }
+
+  .sourceDestination {
+    margin-bottom: 20px;
+  }
+
+  .searchFormField {
+    width: 90%;
+    padding: 12px;
+    margin-left: 30px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #333;
+    transition: all 0.3s;
+    &:focus {
+      border-color: #5e72e4;
+      background-color: #515050;
+    }
+  }
+  .searchFormField {
+    color: #dddada; /* Boja placeholder teksta */
+  }
+
+  .searchFormField option:disabled {
+    color: #dad9d9; /* Boja placeholder opcije */
+  }
+
+  .field {
+    margin-bottom: 20px;
+  }
+
+  .button {
+    padding: 12px;
+    background-color: #5e72e4;
+    color: #333;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #4e62c7;
+    }
+  }
+
+  .column {
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #393737;
+    border-radius: 10px;
+  }
+
+  .fromTitle {
+    font-size: 15px;
+  }
+  .toTitle {
+    font-size: 15px;
+  }
+
+  .loading {
+    margin-top: 50px;
+    margin-right: 50px;
+  }
+
+  #FlightResult {
+    margin-top: 30px;
+
+    .box {
+      background-color: #252525;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+
+        .cell {
+          font-size: 14px;
+          color: #ffffff;
+          padding: 8px 12px;
+        }
+
+        .cell:last-child {
+          text-align: left;
+        }
+      }
+
+      .button.is-success {
+        background-color: #5e72e4;
+        color: #fff;
+        padding: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 5px;
+        color: rgb(26, 25, 25);
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #4e62c7;
+        }
+      }
+    }
+  }
+
+  .container-text {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+  }
+
+  .mat-spinner {
+    margin-top: 50px;
+    color: #8392e3;
+  }
+}

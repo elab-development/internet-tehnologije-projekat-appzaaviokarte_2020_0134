@@ -1,0 +1,96 @@
+.dialog {
+  background-color: #f7f9fc;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dialog-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.dialog-header button {
+  color: #1a237e;
+  background: none;
+}
+
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.input-field.half {
+  width: 48%;
+}
+
+.input-field mat-label {
+  color: #1a237e;
+}
+
+mat-error {
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: #1a237e;
+  border: 1px solid #1a237e;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+button[mat-raised-button] {
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

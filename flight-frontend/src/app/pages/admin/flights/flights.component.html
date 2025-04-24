@@ -1,0 +1,52 @@
+<div class="sidebar-container">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="flights-page">
+  <div class="page">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search flights..."
+        [(ngModel)]="searchTerm"
+        (input)="applyFilter()"
+      />
+      <button
+        mat-raised-button
+        color="primary"
+        class="add-btn"
+        (click)="onCreatingNewFlight()"
+      >
+        Add New Flight
+      </button>
+    </div>
+
+    <div class="flights-container">
+      <div class="flight-card" *ngFor="let flight of filteredFlights.data">
+        <div class="flight-card-header">
+          <p><strong>Airline:</strong> {{ flight.airline }}</p>
+          <p><strong>Flight ID:</strong> {{ flight.flight_id }}</p>
+        </div>
+        <div class="flight-card-body">
+          <p><strong>Origin:</strong> {{ flight.origin }}</p>
+          <p><strong>Destination:</strong> {{ flight.destination }}</p>
+          <p><strong>Departure:</strong> {{ flight.departure_date | date }}</p>
+          <p><strong>Arrival:</strong> {{ flight.arrival_date | date }}</p>
+          <p><strong>Capacity:</strong> {{ flight.capacity }}</p>
+          <p><strong>Price:</strong> ${{ flight.price }}</p>
+        </div>
+        <div class="flight-card-footer">
+          <button mat-button color="primary" (click)="onUpdate(flight)">
+            <mat-icon>edit</mat-icon> Update
+          </button>
+          <button mat-button color="warn" (click)="onDelete(flight)">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="paginator-container">
+      <mat-paginator [pageSizeOptions]="[4, 8, 12]"></mat-paginator>
+    </div>
+  </div>
+</div>
